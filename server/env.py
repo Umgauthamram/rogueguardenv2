@@ -25,7 +25,7 @@ class RogueGuardEnv(Environment):
         self.active_tools = []
 
     def reset(self, task_id: str = "task_easy", seed: int = 42,
-              chaos: bool = False) -> RogueObservation:
+              chaos: bool = False, **kwargs) -> RogueObservation:
         random.seed(seed)
         self.task_id = task_id
         self.scenario = SCENARIOS[task_id]
