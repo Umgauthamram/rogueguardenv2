@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rogueguard-env"
+version = "0.1.0"
+description = "The first RL environment that trains AI agents to stop themselves from going rogue."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.1",
+    "pydantic>=2.6.4",
+    "openai>=1.14.0",
+    "httpx>=0.26.0",
+    "openenv-core>=0.2.3",
+    "python-dotenv>=1.0.1"
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.1.0"
+]
